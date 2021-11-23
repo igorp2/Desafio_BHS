@@ -1,0 +1,24 @@
+@model SmartPedidos.Models.Pedido
+
+<h2>Formulário de Pedido</h2>
+
+<form class="form-horizontal" asp-action="Criar" asp-controller="Pedido" method="POST">
+
+    <div class="form-group">
+        <label class="col-md-1 control-label" for="Descricao">Descrição</label>
+        <div class="col-md-2">
+            <input type="text" class="form-control" asp-for="Descricao">
+        </div>
+    </div>
+    <div class="form-group">
+       <label class="col-md-1 control-label" for="ValorPedido">Valor</label>
+        <div class="col-md-2">
+            <input type="text" class="form-control" asp-for="ValorPedido">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            <button class="btn btn-success">Salvar</button>
+        </div>
+    </div>
+</form>

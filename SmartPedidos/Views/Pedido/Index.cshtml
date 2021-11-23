@@ -1,0 +1,49 @@
+@model List<SmartPedidos.Models.Pedido>
+<style type="text/css">
+  h2 {
+    color: rgb(135, 194, 199);
+  }
+</style>
+
+<body>
+  <h2>Todos Pedidos</h2><br>
+  <a href="../Pedido/Criar" class="btn btn-secondary">Criar Pedido</a>
+  <a href="#" class="btn btn-primary">Filtrar</a><br><br><br>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-hover">
+        <tbody>
+          <tr>
+            <th>Descrição</th>
+            <th>Data</th>
+            <th>Valor</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+          </tr>
+
+          @foreach (var item in Model)
+          {
+            <tr>
+              <td>@item.Descricao</td>
+              <td>@item.DataPedido</td>
+              <td>@item.ValorPedido</td>
+              <td>@item.Status</td>
+              <td>
+
+                <a href="../Pedido/Listar/@item.Id" id="@item.Id" class="btn btn-primary">Itens</a>
+
+              </td>
+              <td>
+                <a href="../Pedido/Deletar/@item.Id" class="btn btn-danger">Deletar</a>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</body>
